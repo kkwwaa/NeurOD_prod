@@ -1,0 +1,36 @@
+{% extends 'amscapp/base.html' %}
+
+{% block title %}Главная{% endblock %}
+{% block body %}
+  <div class="container">
+  <form class="form-inline my-2 my-lg-0" action="{% url 'index' %}" method="get">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Поиск" name="q">
+      <button class="btn btn-outline-secondary" type="submit">   Поиск</button>
+    </div>
+  </form>
+    <div class="row">
+      <div class="col-md-12">
+      <br>
+        <table class="table">
+          <th>
+            Пациент
+          </th>
+          <th>
+            Дата регистрации
+          </th>
+          {% for patient in patients %}
+            <tr>
+              <td>
+                <a class="btn btn-default" href="{% url 'view_patient' pk=patient.pk %}">{{ patient.name }}</a>
+              </td>
+              <td>
+                {{ patient.date_registration }}
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
