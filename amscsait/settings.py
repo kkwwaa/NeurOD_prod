@@ -77,7 +77,7 @@ WSGI_APPLICATION = "amscsait.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'NeurOD',
+        'NAME': 'test',
         'USER': 'postgres',
         'PASSWORD': '0690',
         'HOST': 'localhost',  # или адрес вашей базы данных

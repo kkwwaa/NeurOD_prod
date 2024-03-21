@@ -17,7 +17,7 @@ urlpatterns = [
     #path("login", views.user_login, name="login"),
     path("", views.user_login, name='login'),
     path("exit", views.exit, name="exit"),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_DIR)
 
 if settings.DEBUG:
     import debug_toolbar
